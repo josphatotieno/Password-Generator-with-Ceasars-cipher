@@ -1,3 +1,6 @@
+const eyeIcon = document.querySelector('#togglePassword');
+const password = document.querySelector('#password');
+
 document.querySelector('#generatorBtn').addEventListener('click', passwordGenerator);
 
 function passwordGenerator(e) {
@@ -17,20 +20,29 @@ function passwordGenerator(e) {
   });
 
   document.querySelector('#password').value = rotArr.join('');
-  document.querySelector('.password-msg').textContent = `
-    Your password is ${rotArr.join('')}. Save it somewhere.
-  `;
-  setTimeout(() => {
-    document.querySelector('.password-msg').remove()
-  },10000)
-
- 
+  
   e.preventDefault();
-//   return rotArr.join('');
 }
 
-// console.log(passwordGenerator())
+eyeIcon.addEventListener('click', (e) => {
+  // toggle the type attribute
+  // const type = password.getAttribute("type") === "password" ? "text" : "password";
+  // password.setAttribute("type", type);
+  
+  
+  // // toggle the icon
+  // eyeIcon.classList.toggle('fa-eye');
 
-// document.querySelector('#password').value = passwordGenerator();
+  if(e.target.classList.contains('fa-eye-slash')) {
+    e.target.className = 'fa fa-eye';
+    password.setAttribute('type', 'text');
+  } else {
+    e.target.className = 'fa fa-eye-slash';
+    password.setAttribute('type', 'password');
+  }
+
+})
+
+
 
 

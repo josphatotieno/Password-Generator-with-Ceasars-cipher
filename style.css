@@ -11,15 +11,16 @@ body {
 }
 
 form {
-    max-width: 500px;
+    max-width: 450px;
     margin:30px auto;
-    padding: 30px;
+    padding: 20px;
     border-radius: 4px;
     /* background-color: rgb(198, 198, 199); */
     box-shadow: 3px 3px 4px 4px rgba(0, 0, 0, 0.199);
 }
 
-form > div:not(last-child) {
+form > div,
+.name > div:first-child {
     margin-bottom: 20px;
 }
 
@@ -28,12 +29,35 @@ form > div:not(last-child) {
     margin-bottom: 30px;
 }
 
-.name {
+
+.form-control {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row-reverse;
 }
 
-.password > input {
+.form-control {
+    position: relative;
+}
+
+.form-control i {
+    position: absolute;
+    left: 2%;
+    top: 26%;
+}
+
+.form-control .fa-eye,
+.form-control .fa-eye-slash {
+    cursor: pointer;
+    position: absolute;
+    left: 83%;
+    top: 26%;
+}
+
+.password > div {
+    display: flex;
+}
+
+.password > div input {
     margin-right: 15px;
 }
 
@@ -46,20 +70,33 @@ button {
     box-shadow: 1px 3px 4px 4px rgba(0, 0, 0, .15);
 }
 
-input[type="email"] {
+input:not(input[type="submit"]) {
+    padding-left: 31px;
+}
+
+input:not(input[type='password']) {
     width: 100%;
 }
 
-.password-msg {
-    margin-top: 30px;
-    color: rgb(11, 241, 22);
+input::placeholder {
+    margin-left: 50px;
 }
 
-button,
+input[type="password"] {
+    padding-left: 20px;
+}
+
 input[type="submit"] {
     cursor: pointer;
+    margin-top: 20px;
     background-color: blue;
     color: #fff;
+}
+
+button {
+    cursor: pointer;
+    border: 2px solid blue;
+    color: blue;
 }
 
 button:focus,

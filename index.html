@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Password Generator with Ceasars Cipher - ROT13 Cipher</title>
 </head>
@@ -16,18 +17,35 @@
             </div>
 
             <div class="name">
-                <input type="text" name=""  placeholder="Enter first name">
-                <input type="text" name="" id="" placeholder="Enter last name">
+                <div class="form-control">
+                    <input type="text" name=""  placeholder="Enter first name">
+                    <i class="fa fa-user-circle"></i>
+                </div>
+                
+                <div class="form-control">
+                    <input type="text" name="" id="" placeholder="Enter last name">
+                    <i class="fa fa-user-circle"></i>
+                </div>
+               
             </div>
 
-            <div class="email">
+            <div class="email form-control">
                 <input type="email" name=""  placeholder="Enter your email">
+                <i class="fa fa-envelope"></i>
             </div>
 
             <div class="password">
-                <input type="password" name="" id="password" placeholder="Password">
-                <button id="generatorBtn">Generate Password</button>
-                <p class="password-msg"></p>
+                <div>
+                    <div class="form-control">
+                        <input type="password" name="" id="password" placeholder="Password">
+                        <i class="fa fa-lock"></i>
+                        <i class="fa fa-eye-slash" id="togglePassword"></i>
+
+                    </div>
+                   
+                    <button id="generatorBtn">Generate Password</button>
+                </div>
+
             </div>
             <input type="submit" value="Sign Up">
         </form>
